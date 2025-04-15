@@ -52,7 +52,7 @@
 
       # --- Darwin 用設定 (nix-darwin) ---
       darwinConfigurations.myDarwin = darwin.lib.darwinSystem {
-        inherit system = darwinSystem;
+        system = darwinSystem;
         modules = [
           # Darwin 固有のシステム設定。WSL/NixOS 固有の設定は削除または置換してください。
           ./configuration-darwin.nix
