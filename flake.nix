@@ -1,28 +1,16 @@
 {
-
   description = "My NixOS and Darwin flake setup with Fish and Emacs (Darwin is aarch64)";
 
-
-
   inputs = {
-
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-
     home-manager.url = "github:nix-community/home-manager/release-24.11";
-
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-
-
     # 既存の NixOS-WSL 用モジュール
-
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
-
-
 
     # Darwin 用のモジュール（nix-darwin）
     darwin.url = "github:lnl7/nix-darwin/master";
-
     dotfiles = {
       url = "git+ssh://git@github.com/imtan/dotfiles?ref=main";
       flake = false;
@@ -43,7 +31,7 @@
     in rec {
       # --- NixOS 用設定 ---
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        inherit system = linuxSystem;
+        system = linuxSystem;
         modules = [
           # WSL 用固有設定（不要な場合は除外）
           nixos-wsl.nixosModules.wsl
