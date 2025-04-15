@@ -1,0 +1,52 @@
+format = """
+[▒▒▒](fg:#9ca3af)\
+[ $time ](fg:#FFA500 bold)\
+[ │ ](fg:#6b7280)\
+$directory\
+[ │ ](fg:#6b7280)\
+$git_branch\
+$git_status\
+$line_break\
+[╺](fg:#FFA500)$character"""
+
+add_newline = true
+
+[time]
+disabled = false
+format = "[$time](fg:#FFA500)"
+time_format = "%H:%M:%S"
+utc_time_offset = "+9"
+style = "bold"
+
+[character]
+success_symbol = "[λ](bold fg:#FFA500)"
+error_symbol = "[✖](bold red)"
+vicmd_symbol = "[↲](bold fg:#FFA500)"
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+style = "fg:#f4f4f4 bold"
+
+[git_branch]
+symbol = ""
+style = "fg:#8a94a7"
+format = "[$branch]($style)"
+
+[git_status]
+style = "fg:#6b7280"
+format = "[$all_status]($style)"
+
+[username]
+disabled = true
+
+[hostname]
+disabled = true
+
+[cmd_duration]
+min_time = 500
+format = "[⏱ $duration](fg:#FFA500)"
+style = "bold"
+
+[line_break]
+disabled = false

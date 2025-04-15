@@ -1,0 +1,124 @@
+format = """
+
+[▒▒▒](fg:#9ca3af)\
+
+[ $time ](bold italic fg:#a3ffda)\
+
+[│](fg:#6b7280)\
+
+$directory\
+
+[│](fg:#6b7280)\
+
+$git_branch\
+
+$git_status\
+
+$line_break\
+
+[╺](fg:#c6ffc1)$character"""
+
+
+
+add_newline = true
+
+
+
+[time]
+
+disabled = false
+
+format = "[%T](fg:#9ca3af)"
+
+time_format = "%H:%M:%S"
+
+utc_time_offset = "+9" # JSTなら+9
+
+style = "italic dimmed"
+
+
+
+[character]
+
+success_symbol = "[λ](bold fg:#a3ffda)"
+
+error_symbol = "[✖](bold red)"
+
+vicmd_symbol = "[↲](bold fg:#c6ffc1)"
+
+
+
+[directory]
+
+truncation_length = 3
+
+truncation_symbol = "…/"
+
+style = "fg:#c6ffc1 bold"
+
+
+
+[git_branch]
+
+symbol = ""
+
+style = "fg:#8a94a7"
+
+format = "[$symbol $branch ]($style)"
+
+
+
+[git_status]
+
+style = "fg:#6b7280"
+
+format = "[$all_status]($style)"
+
+
+
+[username]
+
+show_always = true
+
+style_user = "fg:#8a94a7"
+
+format = "[▣ $user]($style_user)"
+
+
+
+[hostname]
+
+ssh_only = false
+
+style = "fg:#8a94a7"
+
+format = "[ ▤ $hostname ]($style)"
+
+
+
+[package]
+
+disabled = true
+
+
+
+[memory_usage]
+
+disabled = true
+
+
+
+[cmd_duration]
+
+min_time = 500
+
+format = "[⏱ $duration](fg:#c6ffc1)"
+
+style = "bold"
+
+
+
+[line_break]
+
+disabled = false
+
