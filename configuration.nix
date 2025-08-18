@@ -12,6 +12,8 @@
     # include NixOS-WSL modules
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   wsl.enable = true;
   wsl.defaultUser = "nixos";
   programs.fish.enable = true;

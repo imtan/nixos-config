@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(hm-switch:*)",
+      "Bash(nix-env:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/im_tan/Documents/Repository/Private/dotfiles/.emacs.d"
+    ]
+  }
+}

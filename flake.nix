@@ -2,8 +2,8 @@
   description = "My NixOS and Darwin flake setup with Fish and Emacs (Darwin is aarch64)";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # 既存の NixOS-WSL 用モジュール

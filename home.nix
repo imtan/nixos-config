@@ -41,8 +41,7 @@ in
   };
   programs.man.enable = true;
   home.packages = with pkgs; [
-    fish starship git nodejs cmigemo
-    copilot-language-server
+    fish starship git nodejs cmigemo claude-code
   ];
   home.file.".emacs.d/init.el" = {
     source = dotfiles + "/.emacs.d/init.el";
