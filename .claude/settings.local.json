@@ -5,7 +5,10 @@
       "Bash(nix-env:*)"
     ],
     "additionalDirectories": [
-      "/Users/im_tan/Documents/Repository/Private/dotfiles/.emacs.d"
+      "/Users/im_tan/Documents/Repository/Private/dotfiles/.emacs.d",
+      "/Users/im_tan/Documents/Repository/Private/dotfiles",
+      "/nix/store/73s771ak4vjqdjw9xnabrrizrm1dx96g-dotfiles/.emacs.d",
+      "/nix/store"
     ]
   }
 }

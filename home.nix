@@ -31,7 +31,13 @@ in
       # Dotfiles management
       alias dotfiles='cd ~/Documents/Repository/Private/dotfiles'
       alias emacs-config='cd ~/.emacs.d'
-      alias sync-init='cp ~/.emacs.d/init.el ~/Documents/Repository/Private/dotfiles/.emacs.d/ && cd ~/Documents/Repository/Private/dotfiles && git add .emacs.d/init.el'
+      alias nixos-config='cd ~/Documents/Repository/Private/nixos-config'
+      
+      # Sync scripts
+      alias sync-dotfiles='~/Documents/Repository/Private/nixos-config/sync-dotfiles.sh'
+      alias sync-push='~/Documents/Repository/Private/nixos-config/sync-dotfiles.sh push'
+      alias sync-pull='~/Documents/Repository/Private/nixos-config/sync-dotfiles.sh pull'
+      alias sync-status='~/Documents/Repository/Private/nixos-config/sync-dotfiles.sh status'
     '';
   };
 
@@ -41,8 +47,9 @@ in
   };
   programs.man.enable = true;
   home.packages = with pkgs; [
-    fish starship git nodejs cmigemo claude-code
+    fish starship git nodejs cmigemo claude-code copilot-language-server
   ];
+  # Emacs configuration - conditionally managed
   home.file.".emacs.d/init.el" = {
     source = dotfiles + "/.emacs.d/init.el";
     recursive = false;

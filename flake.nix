@@ -58,13 +58,13 @@
       };
       # --- Home Manager 設定（共通） ---
       homeConfigurations.nixos = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = linuxSystem; };
+        pkgs = import nixpkgs { system = linuxSystem; config = { allowUnfree = true; }; };
         extraSpecialArgs = { dotfiles = dotfilesPath; };
         modules = [ ./home.nix ];
       };
 
       homeConfigurations.darwin = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = darwinSystem; };
+        pkgs = import nixpkgs { system = darwinSystem;  config = { allowUnfree = true; }; };
         extraSpecialArgs = { dotfiles = dotfilesPath; };
         modules = [ ./home.nix ];
       };
