@@ -23,16 +23,16 @@ in
       alias la='eza -la --color=always --group-directories-first'
       alias ..='cd ..'
       set -g theme_color_scheme gruvbox
-      
+
       # Home Manager aliases
       alias hm-switch='nix run nixpkgs#home-manager -- switch --flake .#darwin -b backup'
       alias hm-news='home-manager news'
-      
+
       # Dotfiles management
       alias dotfiles='cd ~/Documents/Repository/Private/dotfiles'
       alias emacs-config='cd ~/.emacs.d'
       alias nixos-config='cd ~/Documents/Repository/Private/nixos-config'
-      
+
       # Sync scripts
       alias sync-dotfiles='~/Documents/Repository/Private/nixos-config/sync-dotfiles.sh'
       alias sync-push='~/Documents/Repository/Private/nixos-config/sync-dotfiles.sh push'
@@ -49,24 +49,6 @@ in
   home.packages = with pkgs; [
     fish starship git nodejs cmigemo claude-code copilot-language-server
   ];
-  # Emacs configuration - conditionally managed
-  home.file.".emacs.d/init.el" = {
-    source = dotfiles + "/.emacs.d/init.el";
-    recursive = false;
-  };
-  home.file.".emacs.d/init-linux.el" = {
-    source = dotfiles + "/.emacs.d/init-linux.el";
-    recursive = false;
-  };
-  home.file.".emacs.d/ddskk" = {
-    source = dotfiles + "/.emacs.d/ddskk";
-    recursive = true;
-  };
-  home.file.".emacs.d/skk-get-jisyo" = {
-    source = dotfiles + "/.emacs.d/skk-get-jisyo";
-    recursive = true;
-  };
-
   home.stateVersion = "24.11";
 }
 
