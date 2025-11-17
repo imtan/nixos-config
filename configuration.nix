@@ -22,7 +22,9 @@ users.users.nixos = {
     isNormalUser = true;
     shell = pkgs.fish;  # ← ここがログインシェルの指定！
   };
-
+  fonts.packages = with pkgs; [
+    nerd-fonts.iosevka
+  ];
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It's perfectly fine and recommended to leave
